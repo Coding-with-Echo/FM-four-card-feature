@@ -1,0 +1,157 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-cyan: hsl(180, 62%, 55%);
+  --color-red: hsl(0, 78%, 62%);
+  --color-orange: hsl(34, 97%, 64%);
+  --color-blue: hsl(212, 86%, 64%);
+
+  --color-body-background: hsl(0, 0%, 98%);
+  --color-paragraph: hsl(229, 6%, 66%);
+  --color-headings: hsl(234, 12%, 34%);
+
+  --fw-exlight: 200;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+}
+
+/* typography */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  display: grid;
+  place-items: center;
+  background: var(--color-body-background);
+  margin: 3rem;
+  color: var(--color-paragraph);
+  font-weight: var(--fw-regular);
+}
+
+h1,
+h2 {
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  color: var(--color-headings);
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 1.95rem;
+}
+/* icon */
+.icon {
+  max-width: 6.4rem;
+  max-height: 6.4rem;
+  width: 100%;
+}
+
+/* card */
+.card {
+  box-shadow: 0 10px 30px 1px hsla(229, 6%, 66%, 0.2);
+  padding: 3rem;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .card__icon {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 3.5rem;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  background: #000;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  left: 0;
+}
+
+.card__supervisor::after {
+  background: var(--color-cyan);
+}
+
+.card__team::after {
+  background: var(--color-red);
+}
+
+.card__karma::after {
+  background: var(--color-orange);
+}
+
+.card__calculator::after {
+  background: var(--color-blue);
+}
+
+/* grid */
+.grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-1x3 {
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+  }
+
+  .card {
+    max-width: 350px;
+  }
+}
+
+/* feature-component */
+
+.feature--header {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.feature__heading {
+  margin-bottom: 1.5rem;
+}
+
+.feature__heading > span {
+  display: block;
+  font-weight: var(--fw-exlight);
+}
+
+.feature__text {
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+}
